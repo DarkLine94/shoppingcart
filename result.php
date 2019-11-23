@@ -1,3 +1,7 @@
+<?php
+require_once("funx.php");
+$books = createBooks();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -16,7 +20,7 @@
 	</header>
 
 	<main>
-		<article id="book">
+		<article id="result">
 			<h2>商品検索 - 検索結果</h2>
 			<section>
 				<h3>商品一覧</h3>
@@ -29,34 +33,15 @@
 						<th>ISBN</th>
 						<th></th>
 					</tr>
+					<?php  for ($i = 0; $i < count($books); $i++) { ?>
 					<tr>
-						<td>Head First PHP & MySQL</td>
-						<td>4,650</td>
-						<td>Lynn Beighley</td>
-						<td>978-4873114446</td>
-						<td><a href="cart.html?id=0">カートに入れる</a></td>
-					</tr>
-					<tr>
-						<td>リーダブルコード</td>
-						<td>2,600</td>
-						<td>Dustin Boswell</td>
-						<td>978-4873115658</td>
-						<td><a href="cart.html?id=1">カートに入れる</a></td>
-					</tr>
-					<tr>
-						<td>Head First デザインパターン</td>
-						<td>5,060</td>
-						<td>Eric Freeman</td>
-						<td>978-4873112497</td>
-						<td><a href="cart.html?id=2">カートに入れる</a></td>
-					</tr>
-					<tr>
-						<td>PHPによるデザインパターン入門</td>
-						<td>2,400</td>
-						<td>下岡 秀幸</td>
-						<td>978-4798015163</td>
-						<td><a href="cart.html?id=3">カートに入れる</a></td>
-					</tr>
+			            <td><?= $books[$i]->getName() ?></td>
+			            <td><?= $books[$i]->getPrice() ?>円</td>
+			            <td><?= $books[$i]->getAuthor() ?></td>
+			            <td><?= $books[$i]->getCode() ?></td>
+			            <td><a href="cart.php?id=<?= $i ?>">カートに入れる</a></td>
+		            </tr>
+					<?php } ?>
 					
 				</table>
 			</section>
