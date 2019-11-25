@@ -47,14 +47,16 @@ if ($mode === "clear"){
 			<th>価格</th>
 			<th>著者</th>
 			<th>ISBN</th>
+			<th></th>
 		</tr>
 		<?php  for ($i = 0; $i < count($cart); $i++) { ?>
 		<tr>
-			<td><?= $books[$i]->getName() ?></td>
-			<td><?= $books[$i]->getPrice() ?>円</td>
-			<td><?= $books[$i]->getAuthor() ?></td>
-			<td><?= $books[$i]->getCode() ?></td>
+			<td><?= $cart[$i]->getName() ?></td>
+			<td><?= $cart[$i]->getPrice() ?>円</td>
+			<td><?= $cart[$i]->getAuthor() ?></td>
+			<td><?= $cart[$i]->getCode() ?></td>
 		</tr>
 		<?php } ?>
     </table>
 </body>
+</html>
