@@ -25,7 +25,7 @@ $books = createBooks();
 			<section>
 				<h3>商品一覧</h3>
 				<table>
-					<caption><a href="entry.html">検索画面に戻る</a><a href="cart.php?id=<?= $i ?>">カートの中身を見る</a></caption>
+					<caption><a href="entry.php">検索画面に戻る</a><a href="cart.php?id=<?= $i ?>">カートの中身を見る</a></caption>
 					<tr>
 						<th>書籍名</th>
 						<th>価格</th>
